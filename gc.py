@@ -1,6 +1,5 @@
 with open("rosalind_gc.txt", 'r') as file:
     l = []
-    k = []
     file = file.read()
     f = file.replace("\n", '')
     f = f.split(">")
