@@ -22,8 +22,6 @@ def ret(y):
 
 
 def ind(x, l):
-    n = []
-    m = []
     for i in range(len(x) + 1):
         for j in range(i):
             if 4 <= len(x[j:i]) <= 12:
@@ -34,7 +32,7 @@ def ind(x, l):
     return ""
 
 
-with open("rosalind_revp2.txt", 'r') as file:
+with open("rosalind_revp.txt", 'r') as file:
     file = file.read()
     f = file.split()
     f.remove(f[0])
