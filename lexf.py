@@ -2,10 +2,8 @@ from itertools import permutations
 
 if __name__ == '__main__':
     a = input()
-    l = []
     c = []
     n = []
-    final = []
     b = int(input())
     listed = a.split()
     f = list(permutations(listed, b))
