@@ -1,47 +1,43 @@
-def inc(A):
-    LIS = [[] for _ in range(len(A))]
-    LIS[0].append(A[0])
+def increase(A):
+    inc = [[] for _ in range(len(A))]
+    inc[0].append(A[0])
     for i in range(1, len(A)):
         for j in range(i):
-            if A[j] < A[i] and len(LIS[j]) > len(LIS[i]):
-                LIS[i] = LIS[j].copy()
+            if A[j] < A[i] and len(inc[j]) > len(inc[i]):
+                inc[i] = inc[j].copy()
 
-        LIS[i].append(A[i])
+        inc[i].append(A[i])
 
     j = 0
     for i in range(len(A)):
-        if len(LIS[j]) < len(LIS[i]):
+        if len(inc[j]) < len(inc[i]):
             j = i
 
-    print(*LIS[j])
+    print(*inc[j])
     return ''
 
 
-def dec(A):
-    LIS = [[] for _ in range(len(A))]
-    LIS[0].append(A[0])
+def decrease(A):
+    dec = [[] for _ in range(len(A))]
+    dec[0].append(A[0])
     for i in range(1, len(A)):
         for j in range(i):
-            if A[j] > A[i] and len(LIS[j]) > len(LIS[i]):
-                LIS[i] = LIS[j].copy()
+            if A[j] > A[i] and len(dec[j]) > len(dec[i]):
+                dec[i] = dec[j].copy()
 
-        LIS[i].append(A[i])
+        dec[i].append(A[i])
 
     j = 0
     for i in range(len(A)):
-        if len(LIS[j]) < len(LIS[i]):
+        if len(dec[j]) < len(dec[i]):
             j = i
 
-    print(*LIS[j])
+    print(*dec[j])
     return ''
 
 
 if __name__ == '__main__':
     a = int(input())
-    l = []
-    c = []
-    n = []
-    final = []
     b = list(map(int, input().split()))
-    print(inc(b))
-    print(dec(b))
+    print(increase(b))
+    print(decrease(b))
